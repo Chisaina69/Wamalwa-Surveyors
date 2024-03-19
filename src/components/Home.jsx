@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import backgroundImg from '/src/assets/background.jpg'; // Replace with the path to your chosen image
+import backgroundImg from '/src/assets/background.jpg'; 
 
 import 'aos/dist/aos.css';
 
@@ -12,13 +11,32 @@ const Home = () => {
   }, []);
 
   const services = [
-    { name: 'Site Inspection', description: 'Detailed analysis and assessment of land sites.' },
-    { name: 'Topographical Surveys', description: 'Accurate representation of the area’s terrain.' },
-    { name: 'Boundary Surveys', description: 'Defining true property corners and property lines.' },
-    { name: 'Measurements', description: 'Precise land and property measurements.' },
-    { name: '3D Modeling', description: 'Advanced three-dimensional representation of terrains.' },
-    { name: 'Safety Inspections', description: 'Ensuring compliance with safety regulations.' },
+    { 
+      name: 'Feasibility studies', 
+      description: 'Thorough analysis and evaluation of land sites to determine their suitability for various purposes.' 
+    },
+    { 
+      name: 'Topographical Surveys', 
+      description: 'Accurate mapping and depiction of the natural and man-made features of a specific area, providing essential data for planning and development.' 
+    },
+    { 
+      name: 'Construction supervision', 
+      description: 'Monitoring and overseeing construction projects to ensure adherence to specifications, quality standards, and safety regulations.' 
+    },
+    { 
+      name: 'Cadastral surveys', 
+      description: 'Precise measurement and delineation of land boundaries and property lines, essential for legal and administrative purposes such as land ownership and taxation.' 
+    },
+    { 
+      name: 'Remote sensing and GIS service', 
+      description: 'Utilization of satellite imagery and geographic information systems (GIS) technology to gather and analyze spatial data, facilitating the creation of detailed three-dimensional representations of terrains for various applications.' 
+    },
+    { 
+      name: 'Designs road and bridges', 
+      description: 'Development and planning of road and bridge infrastructure, ensuring structural integrity, functionality, and compliance with safety standards and regulations.' 
+    },
   ];
+  
 
   return (
     <div>
