@@ -27,8 +27,8 @@ const Footer = () => {
                   <button onClick={toggleDropdownAbout} className="hover:text-indigo-500">About Us</button>
                   {dropdownAbout && (
                     <ul className="absolute bg-gray-700 mt-2 py-2 w-48 rounded-lg shadow-xl">
-                      <li><Link to="/company" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Company</Link></li>
-                      <li><Link to="/team" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Team</Link></li>
+                      <li><Link to="/Company" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Company</Link></li>
+                      <li><Link to="/Team" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Team</Link></li>
                     </ul>
                   )}
                 </li>
@@ -37,7 +37,7 @@ const Footer = () => {
                   {dropdownProjects && (
                     <ul className="absolute bg-gray-700 mt-2 py-2 w-48 rounded-lg shadow-xl">
                       <li><Link to="/new" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Current</Link></li>
-                      <li><Link to="/gallery" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Gallery</Link></li>
+                      <li><Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Gallery</Link></li>
                     </ul>
                   )}
                 </li>
@@ -56,10 +56,10 @@ const Footer = () => {
               <FaEnvelope className="text-indigo-600 mr-2" />
               <span className="text-gray-700">info@wamalwasurveyors.com</span>
             </a>
-            <Link to="/contact" className="flex items-center hover:text-white">
-              <FaPhone className="text-indigo-600 mr-2" />
-              <span className="text-gray-700">0725 699 059 / 0736 762 490</span>
-            </Link>
+            <div className="flex items-center">
+            <FaPhone className="text-indigo-600 mr-2" />
+            <a href="tel:+254725699059" className="text-gray-700 hover:text-indigo-600">0725 699 059</a> / <a href="tel:+254736762490" className="text-gray-700 hover:text-indigo-600">0736 762 490</a>
+          </div>
           </div>
 
           {/* Social Media Icons */}
