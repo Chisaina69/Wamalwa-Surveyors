@@ -43,7 +43,7 @@ const Navbar = () => {
             </button>
             {dropdownProjects && (
               <div className="absolute left-0 bg-gray-700 mt-2 py-2 w-48 rounded-lg shadow-xl">
-                <Link to="/new" className="block px-4 py-2 hover:bg-gray-600">Current</Link>
+                <Link to="/Projects" className="block px-4 py-2 hover:bg-gray-600">Projects</Link>
                 <Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600">Gallery</Link>
               </div>
             )}
@@ -81,7 +81,7 @@ const Navbar = () => {
           </button>
           {dropdownProjects && (
             <div className="bg-gray-700 mt-2 py-2 rounded-lg shadow-xl">
-              <Link to="/new|ongoing" className="block px-4 py-2 hover:bg-gray-600">New|Ongoing</Link>
+              <Link to="/Projects" className="block px-4 py-2 hover:bg-gray-600">Projects</Link>
               <Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600">Gallery</Link>
             </div>
           )}

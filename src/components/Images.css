@@ -1,0 +1,20 @@
+
+@keyframes bgChange {
+    0% { background-image: url('src/assets/J16A9166.jpg'); }
+    33% { background-image: url('src/assets/Project4.jpg'); }
+    67% { background-image: url('src/assets/Project 4.jpg'); }
+    100% { background-image: url('src/assets/J16A0474.jpg'); }
+  }
+  
+  .animate-bgChange {
+    animation: bgChange 1800s infinite;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  

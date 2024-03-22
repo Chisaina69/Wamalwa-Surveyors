@@ -1,0 +1,26 @@
+@keyframes scroll {
+    0%, 100% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+  }
+  
+  .carousel img {
+    animation: scroll 16s infinite;
+  }
+  
+  .carousel img:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .carousel img:nth-child(2) {
+    animation-delay: 4s;
+  }
+  
+  .carousel img:nth-child(3) {
+    animation-delay: 10s;
+  }
+  
+  .carousel img:nth-child(4) {
+    animation-delay: 20s;
+  }
+  
