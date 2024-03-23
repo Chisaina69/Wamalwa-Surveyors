@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImage1 from "../assets/June 8th 2023/J16A9159.jpg";
-import backgroundImage2 from "../assets/June 8th 2023/J16A9163.jpg";
-import backgroundImage3 from "../assets/May 30 2023/J16A1241.jpg";
+import backgroundImage1 from "/src/assets/J16A0568.jpg";
+import backgroundImage2 from "/src/assets/J16A1249.jpg";
+import backgroundImage3 from "/src/assets/J16A0506.jpg";
 
 
 
@@ -66,7 +66,7 @@ const Project = () => {
   
     const intervalId = setInterval(() => {
       setBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-    }, 5000);
+    }, 600000);
   
     return () => clearInterval(intervalId);
   }, []);
