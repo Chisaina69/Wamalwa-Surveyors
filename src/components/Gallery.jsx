@@ -30,8 +30,8 @@ const Gallery = () => {
     residential: [
       '/May 3rd 2023/J16A0474.jpg',
       '/May 3rd 2023/J16A0659.jpg',
-      '/assets/May 3rd 2023/J16A0657.jpg',
-      '/assets/May 3rd 2023/J16A0655.jpg',
+      '/May 3rd 2023/J16A0657.jpg',
+      '/May 3rd 2023/J16A0655.jpg',
       '/May 3rd 2023/J16A0649.jpg',
       '/May 3rd 2023/J16A0645.jpg',
       '/May 3rd 2023/J16A0635.jpg',
