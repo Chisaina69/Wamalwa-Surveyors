@@ -58,13 +58,19 @@ const Project = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
 
   useEffect(() => {
-    // Cycle through background images every 5 seconds
+    
+    backgroundImages.forEach(image => {
+      const img = new Image();
+      img.src = image;
+    });
+  
     const intervalId = setInterval(() => {
       setBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-    }, 5000); // Changed from 6000000 to 5000 for 5 seconds
-
-    return () => clearInterval(intervalId); // Cleanup on component unmount
+    }, 5000);
+  
+    return () => clearInterval(intervalId);
   }, []);
+  
   
     const toggleCategory = (category) => {
       setActiveCategory(category);

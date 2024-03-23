@@ -36,7 +36,41 @@ const Home = () => {
       description: 'Development and planning of road and bridge infrastructure, ensuring structural integrity, functionality, and compliance with safety standards and regulations.' 
     },
   ];
+
+  const projects = [
+    {
+      title: 'Topographical Survey',
+      description: 'A topographical survey maps the elevation, depth, contour lines, and physical characteristics of a parcel of land, providing essential data for planning, development, and construction.', 
+      imageUrl: '/src/assets/project/Project 4.jpg', 
+      link: '/Projects', 
+    },
+    {
+      title: 'Cadastral Survey',
+      description: 'Cadastral surveying specializes in establishing real property boundaries, documenting land ownership, and creating legal documents that define property lines and rights.', 
+      imageUrl: '/src/assets/Cadastral.jpg', 
+      link: '/Projects', 
+    },
+    {
+      title: 'Design, Construction Supervision',
+      description: 'This service encompasses overseeing construction projects, ensuring compliance with blueprints and safety regulations, and managing contractors and subcontractors throughout the build-out.', 
+      imageUrl: '/src/assets/June 8th 2023/J16A9163.jpg', 
+      link: '/Projects', 
+    },
+    // ... add more projects if needed
+  ];
   
+
+  const ProjectCard = ({ title, description, imageUrl, link }) => (
+    <div className="group bg-white rounded-lg p-6 shadow-lg transition duration-300 ease-in-out transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-500 opacity-0 group-hover:opacity-50 transition duration-300 ease-in-out"></div>
+      <img src={imageUrl} alt={title} className="w-full h-40 object-cover mb-4 rounded-lg" />
+      <div className="relative">
+        <h3 className="text-2xl font-semibold mb-3 text-blue-900 group-hover:text-white">{title}</h3>
+        <p className="group-hover:text-gray-200">{description}</p>
+        <a href={link} className="text-blue-600 hover:underline mt-2 inline-block group-hover:text-blue-300">Learn More</a>
+      </div>
+    </div>
+  );
 
   return (
     <div>
@@ -54,7 +88,6 @@ const Home = () => {
         <p className="text-lg" data-aos="fade-up">To deliver exceptional service and insights that empower our clients to make informed decisions about their land and properties.</p>
       </div>
 
-
       {/* Services Section */}
       <div className="container mx-auto px-4 py-16" data-aos="fade-up">
         <h2 className="text-4xl font-semibold text-black mb-8" data-aos="fade-up">What We Do</h2>
@@ -69,10 +102,12 @@ const Home = () => {
       </div>
 
       {/* Projects Section */}
-      <div className="container mx-auto px-4 py-16" data-aos="fade-up">
-        <h2 className="text-4xl font-semibold text-black mb-8" data-aos="fade-up">Our Projects</h2>
+      <div className="container mx-auto px-4 py-16">
+        <h2 className="text-4xl font-semibold text-black mb-8">Our Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Project cards will be added here */}
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
       </div>
     </div>

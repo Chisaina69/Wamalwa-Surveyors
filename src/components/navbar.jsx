@@ -48,7 +48,6 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Link to="/Clients" className="hover:text-red-300">Clients</Link>
           <Link to="/Contact" className="hover:text-red-300">Contact us</Link>
         </div>
         <div className="md:hidden">
@@ -86,7 +85,6 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <Link to="/Clients" className="hover:text-red-300 px-6 py-4" onClick={toggleNavbar}>Clients</Link>
         <Link to="/Contact" className="hover:text-red-300 px-6 py-4" onClick={toggleNavbar}>Contact us</Link>
       </div>
     </nav>

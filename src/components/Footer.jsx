@@ -36,7 +36,7 @@ const Footer = () => {
                   <button onClick={toggleDropdownProjects} className="hover:text-indigo-500">Projects</button>
                   {dropdownProjects && (
                     <ul className="absolute bg-gray-700 mt-2 py-2 w-48 rounded-lg shadow-xl">
-                      <li><Link to="/new" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Current</Link></li>
+                      <li><Link to="/Projects" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Projects</Link></li>
                       <li><Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600 hover:text-white">Gallery</Link></li>
                     </ul>
                   )}
