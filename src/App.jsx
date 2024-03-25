@@ -6,8 +6,9 @@ import Company from "./components/Company";
 import Team from "./components/Team";
 import Contact from './components/Contact'
 import Projects from "./components/Projects";
-import Gallery from "./components/Gallery";
+import Gallery from "./components/Gallery"; 
 import Footer from "./components/Footer";
+import ProjectsList from "./components/ProjectDetails"; 
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <Route path="/Contact" element={<Contact />} />
     <Route  path="/Projects" element={<Projects />} />
     <Route path="/Gallery" element={<Gallery />} />
+    <Route path="/Projectslist" element={<ProjectsList/>} />
     </Routes>
     <Footer/>
     </>

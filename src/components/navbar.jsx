@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
-// Import your logo image
-import logo from '/src/assets/Wamalwa-Surveyors-Logo2.png'; // Update the path to your logo file
+
+import logo from '/src/assets/Wamalwa-Surveyors-Logo2.png'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav className="bg-gray-800 text-white p-4 fixed w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/">
-          <img src={logo} alt="Logo" className="h-8" />
+          <img src={logo} alt="Logo" className="h-12" />
         </Link>
         <div className="hidden md:flex space-x-4">
           <Link to="/" className="hover:text-red-300">Home</Link>
@@ -50,6 +50,7 @@ const Navbar = () => {
               <div className="absolute left-0 bg-gray-700 mt-2 py-2 w-48 rounded-lg shadow-xl">
                 <Link to="/Projects" className="block px-4 py-2 hover:bg-gray-600">Projects</Link>
                 <Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600">Gallery</Link>
+                <Link to="/ProjectsList" className="block px-4 py-2 hover:bg-gray-600">Project Details</Link>
               </div>
             )}
           </div>
@@ -62,7 +63,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Menu */}
-      <div className={`absolute top-0 left-0 h-full bg-gray-900 bg-opacity-95 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out flex flex-col md:hidden`}>
+      <div className={`absolute top-0 left-0 h-full bg-gray-900 bg-opacity-55 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out flex flex-col md:hidden`}>
         <button onClick={toggleNavbar} className="text-xl text-white absolute top-5 right-5">
           <FontAwesomeIcon icon={faTimes} />
         </button>
@@ -87,6 +88,7 @@ const Navbar = () => {
             <div className="bg-gray-700 mt-2 py-2 rounded-lg shadow-xl">
               <Link to="/Projects" className="block px-4 py-2 hover:bg-gray-600">Projects</Link>
               <Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600">Gallery</Link>
+              <Link to="/ProjectsList" className="block px-4 py-2 hover:bg-gray-600">Project Details</Link>
             </div>
           )}
         </div>

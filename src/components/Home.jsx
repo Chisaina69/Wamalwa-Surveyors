@@ -42,19 +42,19 @@ const Home = () => {
       title: 'Topographical Survey',
       description: 'A topographical survey maps the elevation, depth, contour lines, and physical characteristics of a parcel of land, providing essential data for planning, development, and construction.', 
       imageUrl: '/project/Project 4.jpg', 
-      link: '/Projects', 
+      link: '/ProjectsList', 
     },
     {
       title: 'Cadastral Survey',
       description: 'Cadastral surveying specializes in establishing real property boundaries, documenting land ownership, and creating legal documents that define property lines and rights.', 
       imageUrl: '/Cadastral.jpg', 
-      link: '/Projects', 
+      link: '/ProjectsList', 
     },
     {
       title: 'Design, Construction Supervision',
       description: 'This service encompasses overseeing construction projects, ensuring compliance with blueprints and safety regulations, and managing contractors and subcontractors throughout the build-out.', 
       imageUrl: '/June 8th 2023/J16A9163.jpg', 
-      link: '/Projects', 
+      link: '/ProjectsList', 
     },
 
   ];
