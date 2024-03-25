@@ -3,8 +3,8 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <div className="container mx-auto px-4 py-16 bg-cover bg-center h-screen" style={{backgroundImage: 'url("/src/assets/Screenshot 2024-03-18 171740.png")'}}>
-      <div className="bg-white bg-opacity-60 rounded-lg shadow-lg p-8 max-w-lg mx-auto">
+    <div className="flex items-center justify-center h-screen bg-cover bg-center" style={{backgroundImage: 'url("/src/assets/Screenshot 2024-03-18 171740.png")'}}>
+      <div className="bg-white bg-opacity-60 rounded-lg shadow-lg p-8 max-w-lg">
         {/* Stylistic Heading */}
         <h2 className="text-4xl font-bold text-center text-indigo-600 mb-8 relative inline-block">
           Get In Touch
@@ -32,5 +32,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
 
 

@@ -50,15 +50,15 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/contact" className="flex items-center hover:text-white">
               <FaMapMarkerAlt className="text-indigo-600 mr-2" />
-              <span className="text-gray-700">Mua Park, No. 2, Muthaiga, Nairobi</span>
+              <span className="text-white-700">Mua Park, No. 2, Muthaiga, Nairobi</span>
             </Link>
             <a href="mailto:info@wamalwasurveyors.com" className="flex items-center hover:text-white">
               <FaEnvelope className="text-indigo-600 mr-2" />
-              <span className="text-gray-700">info@wamalwasurveyors.com</span>
+              <span className="text-white-700 hover:text-indigo-600">info@wamalwasurveyors.com</span>
             </a>
             <div className="flex items-center">
             <FaPhone className="text-indigo-600 mr-2" />
-            <a href="tel:+254725699059" className="text-gray-700 hover:text-indigo-600">0725 699 059</a> / <a href="tel:+254736762490" className="text-gray-700 hover:text-indigo-600">0736 762 490</a>
+            <a href="tel:+254725699059" className="text-white-700 hover:text-indigo-600">0725 699 059</a> / <a href="tel:+254736762490" className="text-white-700 hover:text-indigo-600">0736 762 490</a>
           </div>
           </div>
 

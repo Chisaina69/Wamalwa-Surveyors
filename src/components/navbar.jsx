@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
+// Import your logo image
+import logo from '/src/assets/Wamalwa-Surveyors-Logo2.png'; // Update the path to your logo file
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownAbout, setDropdownAbout] = useState(false);
@@ -23,7 +26,9 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white p-4 fixed w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-semibold">Wamalwa Surveyors</Link>
+        <Link to="/">
+          <img src={logo} alt="Logo" className="h-8" />
+        </Link>
         <div className="hidden md:flex space-x-4">
           <Link to="/" className="hover:text-red-300">Home</Link>
           <div className="relative">
@@ -92,6 +97,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
 
 
 

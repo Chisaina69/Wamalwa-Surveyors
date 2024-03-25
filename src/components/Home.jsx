@@ -56,21 +56,20 @@ const Home = () => {
       imageUrl: '/June 8th 2023/J16A9163.jpg', 
       link: '/Projects', 
     },
-    // ... add more projects if needed
+
   ];
   
-
-  const ProjectCard = ({ title, description, imageUrl, link }) => (
-    <div className="group bg-white rounded-lg p-6 shadow-lg transition duration-300 ease-in-out transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-500 opacity-0 group-hover:opacity-50 transition duration-300 ease-in-out"></div>
-      <img src={imageUrl} alt={title} className="w-full h-40 object-cover mb-4 rounded-lg" />
-      <div className="relative">
-        <h3 className="text-2xl font-semibold mb-3 text-blue-900 group-hover:text-white">{title}</h3>
-        <p className="group-hover:text-gray-200">{description}</p>
-        <a href={link} className="text-blue-600 hover:underline mt-2 inline-block group-hover:text-blue-300">Learn More</a>
-      </div>
+const ProjectCard = ({ title, description, imageUrl, link }) => (
+  <div className="group bg-white rounded-lg p-6 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 relative">
+    <img src={imageUrl} alt={title} className="w-full h-40 object-cover mb-4 rounded-lg" />
+    <div className="relative">
+      <h3 className="text-2xl font-semibold mb-3 text-black-900 group-hover:text-black">{title}</h3>
+      <p className="group-hover:text-black-200">{description}</p>
+      <a href={link} className="text-blue-600 hover:underline mt-2 inline-block group-hover:text-blue-300">Learn More</a>
     </div>
-  );
+  </div>
+);
+
 
   return (
     <div>
