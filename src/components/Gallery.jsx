@@ -155,7 +155,7 @@ const Gallery = () => {
   return (
     <div className="container mx-auto p-4">
       {/* Category cards with image carousels */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-28">
         {Object.keys(imageCategories).map((category, index) => (
           <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer" onClick={() => handleCategoryClick(category)}>
             <div className="carousel relative w-full h-64 overflow-hidden">

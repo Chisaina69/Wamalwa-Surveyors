@@ -1,5 +1,7 @@
 import React from 'react';
 
+import backgroundImage5 from '../assets/white-background.jpg';
+
 const projects = [
   {
     id: 1,
@@ -238,35 +240,36 @@ const projects = [
   ],
   },
 ];
-
 const ProjectDetails = ({ project }) => {
   return (
-    <div className="container mx-auto p-8 bg-white shadow-md rounded-lg mt-10">
-      <h2 className="text-3xl font-semibold text-gray-800 mb-6">{project.title}</h2>
-      <div className="grid grid-cols-3 gap-4 mb-6">
-        <p className="text-gray-600"><span className="font-medium">Year:</span> {project.year}</p>
-        <p className="text-gray-600"><span className="font-medium">Client:</span> {project.client}</p>
-        <p className="text-gray-600"><span className="font-medium">Location:</span> {project.location}</p>
+    <div className="page-content" style={{ backgroundImage: `url(${backgroundImage5})`, backgroundPosition: 'center', minHeight: '100vh' }}>
+      <div className="container mx-auto p-8 bg-white shadow-md rounded-lg mt-40">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">{project.title}</h2>
+        <div className="grid grid-cols-3 gap-4 mb-6">
+          <p className="text-gray-600"><span className="font-medium">Year:</span> {project.year}</p>
+          <p className="text-gray-600"><span className="font-medium">Client:</span> {project.client}</p>
+          <p className="text-gray-600"><span className="font-medium">Location:</span> {project.location}</p>
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Main Project Features:</h3>
+        <ul className="list-disc list-inside space-y-2 mb-6">
+          {project.mainFeatures.map((feature, index) => (
+            <li key={index} className="text-gray-600">{feature}</li>
+          ))}
+        </ul>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Activities Performed:</h3>
+        <ul className="list-disc list-inside space-y-2 mb-6">
+          {project.activitiesPerformed.map((activity, index) => (
+            <li key={index} className="text-gray-600">{activity}</li>
+          ))}
+        </ul>
       </div>
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Main Project Features:</h3>
-      <ul className="list-disc list-inside space-y-2 mb-6">
-        {project.mainFeatures.map((feature, index) => (
-          <li key={index} className="text-gray-600">{feature}</li>
-        ))}
-      </ul>
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Activities Performed:</h3>
-      <ul className="list-disc list-inside space-y-2 mb-6">
-        {project.activitiesPerformed.map((activity, index) => (
-          <li key={index} className="text-gray-600">{activity}</li>
-        ))}
-      </ul>
     </div>
   );
 };
 
 const ProjectsList = () => {
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       {projects.map(project => (
         <div key={project.id} className="w-full max-w-4xl my-4 p-6 bg-white shadow-lg rounded-lg">
           <ProjectDetails project={project} />

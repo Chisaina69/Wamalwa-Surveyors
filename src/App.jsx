@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Gallery from "./components/Gallery"; 
 import Footer from "./components/Footer";
 import ProjectsList from "./components/ProjectDetails"; 
+import Section from "./components/Sectionalplans";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <Route  path="/Projects" element={<Projects />} />
     <Route path="/Gallery" element={<Gallery />} />
     <Route path="/Projectslist" element={<ProjectsList/>} />
+    <Route path="/Sectionalplans" element={<Section/>} />
     </Routes>
     <Footer/>
     </>

@@ -86,9 +86,9 @@ const Home = () => {
     },
   ];
 
-  const ProjectCard = ({ title, description, imageUrl, link }) => (
+  const ProjectCard = ({ title, description, imageUrl }) => (
     <motion.div 
-      className="group bg-[#475569] rounded-lg p-6 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 relative"
+      className="group bg-[#475569] opacity-95 rounded-lg p-6 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 relative"
       whileHover={{ scale: 1.05 }}
     >
       <img src={imageUrl} alt={title} className="w-full h-40 object-cover mb-4 rounded-lg" />
@@ -106,7 +106,7 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
           <motion.h1 className="text-white text-6xl font-bold mb-4" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }}>{currentImage.title}</motion.h1>
           <motion.p className="text-white text-xl mb-8" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }}>{currentImage.description}</motion.p>
-          <Link to="/ProjectsList" className="text-white bg-sky-500 hover:bg-sky-500 py-2 px-4 rounded-full transition duration-300 ease-in-out animate-bounce">Check Us Out</Link>
+          <Link to="/Company" className="text-white bg-sky-500 hover:bg-sky-500 py-2 px-4 rounded-full transition duration-300 ease-in-out animate-bounce">Check Us Out</Link>
         </div>
       </div>
 

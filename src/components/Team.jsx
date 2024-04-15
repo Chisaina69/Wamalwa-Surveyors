@@ -21,7 +21,7 @@ const Team = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 py-16 relative">
-        <h2 className="text-4xl font-bold text-center text-black underline mb-8">Meet the Team</h2>
+        <h2 className="text-4xl font-extrabold text-center text-sky-950 underline mt-14 mb-8 animate-bounce">Meet the Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-white bg-opacity-60 rounded-lg shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-transform">

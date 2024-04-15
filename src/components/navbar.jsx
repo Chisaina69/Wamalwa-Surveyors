@@ -51,6 +51,7 @@ const Navbar = () => {
                 <Link to="/Projects" className="block px-4 py-2 hover:bg-sky-500">Projects</Link>
                 <Link to="/Gallery" className="block px-4 py-2 hover:bg-sky-500">Gallery</Link>
                 <Link to="/ProjectsList" className="block px-4 py-2 hover:bg-sky-500">Project Details</Link>
+                <Link to="/Sectionalplans" className="block px-4 py-2 hover:bg-sky-500">Sectional Plans</Link>
               </div>
             )}
           </div>
@@ -63,36 +64,37 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Menu */}
-      <div className={`absolute top-0 left-0 h-full bg-gray-900 bg-opacity-55 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out flex flex-col md:hidden`}>
+      <div className={`absolute top-0 left-0 h-full bg-sky-950 bg-opacity-95 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out flex flex-col md:hidden`}>
         <button onClick={toggleNavbar} className="text-xl text-white absolute top-5 right-5">
           <FontAwesomeIcon icon={faTimes} />
         </button>
-        <Link to="/" className="hover:text-red-300 px-6 py-4" onClick={toggleNavbar}>Home</Link>
+        <Link to="/" className="hover:text-sky-500 px-6 py-4" onClick={toggleNavbar}>Home</Link>
         {/* Mobile Dropdowns */}
         <div className="px-6 py-4">
-          <button onClick={toggleDropdownAbout} className="hover:text-red-300 flex items-center justify-between w-full">
+          <button onClick={toggleDropdownAbout} className="hover:text-sky-500 flex items-center justify-between w-full">
             About Us <FontAwesomeIcon icon={dropdownAbout ? faCaretUp : faCaretDown} />
           </button>
           {dropdownAbout && (
             <div className="bg-gray-700 mt-2 py-2 rounded-lg shadow-xl">
-              <Link to="/Company" className="block px-4 py-2 hover:bg-gray-600">Company</Link>
-              <Link to="/team" className="block px-4 py-2 hover:bg-gray-600">Team</Link>
+              <Link to="/Company" className="block px-4 py-2 hover:bg-sky-500">Company</Link>
+              <Link to="/team" className="block px-4 py-2 hover:bg-sky-500">Team</Link>
             </div>
           )}
         </div>
         <div className="px-6 py-4">
-          <button onClick={toggleDropdownProjects} className="hover:text-red-300 flex items-center justify-between w-full">
+          <button onClick={toggleDropdownProjects} className="hover:text-sky-500 flex items-center justify-between w-full">
             Projects <FontAwesomeIcon icon={dropdownProjects ? faCaretUp : faCaretDown} />
           </button>
           {dropdownProjects && (
             <div className="bg-gray-700 mt-2 py-2 rounded-lg shadow-xl">
-              <Link to="/Projects" className="block px-4 py-2 hover:bg-gray-600">Projects</Link>
-              <Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600">Gallery</Link>
-              <Link to="/ProjectsList" className="block px-4 py-2 hover:bg-gray-600">Project Details</Link>
+              <Link to="/Projects" className="block px-4 py-2 hover:bg-sky-500">Projects</Link>
+              <Link to="/Gallery" className="block px-4 py-2 hover:bg-sky-500">Gallery</Link>
+              <Link to="/ProjectsList" className="block px-4 py-2 hover:bg-sky-500">Project Details</Link>
+              <Link to="/Sectionalplans" className="block px-4 py-2 hover:bg-sky-500">Sectional Plans</Link>
             </div>
           )}
         </div>
-        <Link to="/Contact" className="hover:text-red-300 px-6 py-4" onClick={toggleNavbar}>Contact us</Link>
+        <Link to="/Contact" className="hover:text-sky-500 px-6 py-4" onClick={toggleNavbar}>Contact us</Link>
       </div>
     </nav>
   );
