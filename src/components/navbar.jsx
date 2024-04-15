@@ -24,37 +24,37 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white p-4 fixed w-full z-50">
+    <nav className="bg-sky-950 opacity-80  text-white p-4 fixed w-full z-50 mb-10">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/">
-          <img src={logo} alt="Logo" className="h-12" />
+          <img src={logo} alt="Logo" className="h-20 mt-1 mb-1" />
         </Link>
         <div className="hidden md:flex space-x-4">
-          <Link to="/" className="hover:text-red-300">Home</Link>
+          <Link to="/" className="hover:text-sky-500">Home</Link>
           <div className="relative">
-            <button onClick={toggleDropdownAbout} className="hover:text-red-300 flex items-center">
+            <button onClick={toggleDropdownAbout} className="hover:text-sky-500 flex items-center">
               About Us <FontAwesomeIcon icon={dropdownAbout ? faCaretUp : faCaretDown} />
             </button>
             {dropdownAbout && (
               <div className="absolute left-0 bg-gray-700 mt-2 py-2 w-48 rounded-lg shadow-xl">
-                <Link to="/Company" className="block px-4 py-2 hover:bg-gray-600">Company</Link>
-                <Link to="/team" className="block px-4 py-2 hover:bg-gray-600">Team</Link>
+                <Link to="/Company" className="block px-4 py-2 hover:bg-sky-500">Company</Link>
+                <Link to="/team" className="block px-4 py-2 hover:bg-sky-500">Team</Link>
               </div>
             )}
           </div>
           <div className="relative">
-            <button onClick={toggleDropdownProjects} className="hover:text-red-300 flex items-center">
+            <button onClick={toggleDropdownProjects} className="hover:text-sky-500 flex items-center">
               Projects <FontAwesomeIcon icon={dropdownProjects ? faCaretUp : faCaretDown} />
             </button>
             {dropdownProjects && (
               <div className="absolute left-0 bg-gray-700 mt-2 py-2 w-48 rounded-lg shadow-xl">
-                <Link to="/Projects" className="block px-4 py-2 hover:bg-gray-600">Projects</Link>
-                <Link to="/Gallery" className="block px-4 py-2 hover:bg-gray-600">Gallery</Link>
-                <Link to="/ProjectsList" className="block px-4 py-2 hover:bg-gray-600">Project Details</Link>
+                <Link to="/Projects" className="block px-4 py-2 hover:bg-sky-500">Projects</Link>
+                <Link to="/Gallery" className="block px-4 py-2 hover:bg-sky-500">Gallery</Link>
+                <Link to="/ProjectsList" className="block px-4 py-2 hover:bg-sky-500">Project Details</Link>
               </div>
             )}
           </div>
-          <Link to="/Contact" className="hover:text-red-300">Contact us</Link>
+          <Link to="/Contact" className="hover:text-sky-500">Contact us</Link>
         </div>
         <div className="md:hidden">
           <button onClick={toggleNavbar} className="text-xl">

@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/contact" className="flex items-center hover:text-white">
               <FaMapMarkerAlt className="text-indigo-600 mr-2" />
-              <span className="text-white-700">Mua Park, No. 2, Muthaiga, Nairobi</span>
+              <span className="text-white-700">Mua Park, No. 2, Westlands, Nairobi</span>
             </Link>
             <a href="mailto:info@wamalwasurveyors.com" className="flex items-center hover:text-white">
               <FaEnvelope className="text-indigo-600 mr-2" />

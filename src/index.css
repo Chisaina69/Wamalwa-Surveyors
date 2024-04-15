@@ -10,6 +10,7 @@
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background-color: #dfe0f8;
+  padding: auto;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

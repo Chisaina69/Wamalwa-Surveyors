@@ -43,7 +43,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Geo-Referencing, Preparation and Registration of Sectional Plans titling of DMI Residency – 18 town houses",
+    title: "Geo-Referencing, Preparation and Registration of Sectional Plans titling of DMI Residenz – 18 town houses",
     year: "2023",
     client: "Canyon Ltd",
     location: "Lower Kabete",
@@ -241,7 +241,7 @@ const projects = [
 
 const ProjectDetails = ({ project }) => {
   return (
-    <div className="container mx-auto p-8 bg-white shadow-md rounded-lg">
+    <div className="container mx-auto p-8 bg-white shadow-md rounded-lg mt-10">
       <h2 className="text-3xl font-semibold text-gray-800 mb-6">{project.title}</h2>
       <div className="grid grid-cols-3 gap-4 mb-6">
         <p className="text-gray-600"><span className="font-medium">Year:</span> {project.year}</p>
@@ -266,7 +266,7 @@ const ProjectDetails = ({ project }) => {
 
 const ProjectsList = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center ">
       {projects.map(project => (
         <div key={project.id} className="w-full max-w-4xl my-4 p-6 bg-white shadow-lg rounded-lg">
           <ProjectDetails project={project} />

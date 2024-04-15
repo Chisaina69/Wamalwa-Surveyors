@@ -1,15 +1,43 @@
-import React, { useEffect } from 'react';
-import backgroundImg from '/src/assets/background.jpg'; 
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import 'aos/dist/aos.css';
+// Importing background images
+import backgroundImg from '../assets/background.jpg';
+import backgroundImage2 from '../assets/J16A0496.jpg';
+import backgroundImage3 from '../assets/J16A0533.jpg';
+import backgroundImage4 from '../assets/J16A1249.jpg';
+import backgroundImage5 from '../assets/white-background.jpg';
+
+
+
+const preloadImages = (images) => {
+  images.forEach((image) => {
+    new Image().src = image;
+  });
+};
 
 const Home = () => {
-  useEffect(() => {
-    import('aos/dist/aos').then((AOS) => {
-      AOS.default.init({ once: true });
-    });
-  }, []);
+  const [backgroundImages, setBackgroundImages] = useState([
+    { img: backgroundImg, title: 'Precision in Every Measurement', description: 'Your Trusted Partner in Land Surveying' },
+    { img: backgroundImage2, title: 'Your Accurate Choice' },
+    { img: backgroundImage3, title: 'DEFINING BOUNDARIES IN KENYA SINCE 2013' },
+    { img: backgroundImage4, title: 'ENSURING ORDER IN THE PHYSICAL WORLD' },
+  ]);
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 5000); 
+
+    preloadImages(backgroundImages.map(image => image.img)); 
+
+    return () => clearInterval(interval);
+  }, [backgroundImages]);
+
+  const currentImage = backgroundImages[currentImageIndex];
   const services = [
     { 
       name: 'Feasibility studies', 
@@ -56,53 +84,60 @@ const Home = () => {
       imageUrl: '/June 8th 2023/J16A9163.jpg', 
       link: '/ProjectsList', 
     },
-
   ];
-  
-const ProjectCard = ({ title, description, imageUrl, link }) => (
-  <div className="group bg-white rounded-lg p-6 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 relative">
-    <img src={imageUrl} alt={title} className="w-full h-40 object-cover mb-4 rounded-lg" />
-    <div className="relative">
-      <h3 className="text-2xl font-semibold mb-3 text-black-900 group-hover:text-black">{title}</h3>
-      <p className="group-hover:text-black-200">{description}</p>
-      <a href={link} className="text-blue-600 hover:underline mt-2 inline-block group-hover:text-blue-300">Learn More</a>
-    </div>
-  </div>
-);
 
+  const ProjectCard = ({ title, description, imageUrl, link }) => (
+    <motion.div 
+      className="group bg-[#475569] rounded-lg p-6 shadow-lg transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 relative"
+      whileHover={{ scale: 1.05 }}
+    >
+      <img src={imageUrl} alt={title} className="w-full h-40 object-cover mb-4 rounded-lg" />
+      <div className="relative">
+        <h3 className="text-2xl font-bold mb-3 text-sky-500 group-hover:text-sky-500">{title}</h3>
+        <p className="group-hover:text-white">{description}</p>
+        <Link to="/ProjectsList" className="text-sky-500 hover:underline mt-2 inline-block group-hover:text-sky-500">Learn More</Link>
+      </div>
+    </motion.div>
+  );
 
   return (
-    <div>
-      <div className="relative" style={{ backgroundImage: `url(${backgroundImg})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '50vh' }}>
+    <div className='bg-[#1e293b] '  style={{ backgroundImage: `url(${backgroundImage5})`, backgroundPosition: 'center', minHeight: '100vh' }}>
+      <div className="relative" style={{ backgroundImage: `url(${currentImage.img})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
-          <h1 className="text-white text-6xl font-bold mb-4" data-aos="fade-up">Precision in Every Measurement</h1>
-          <p className="text-white text-xl mb-8" data-aos="fade-up">Your Trusted Partner in Land Surveying</p>
+          <motion.h1 className="text-white text-6xl font-bold mb-4" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }}>{currentImage.title}</motion.h1>
+          <motion.p className="text-white text-xl mb-8" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }}>{currentImage.description}</motion.p>
+          <Link to="/ProjectsList" className="text-white bg-sky-500 hover:bg-sky-500 py-2 px-4 rounded-full transition duration-300 ease-in-out animate-bounce">Check Us Out</Link>
         </div>
       </div>
 
-      <div className="mt-8 max-w-3xl mx-auto bg-white bg-opacity-90 rounded-lg p-8 shadow-lg" data-aos="fade-up">
-        <h2 className="text-4xl font-semibold text-blue-900 mb-4" data-aos="fade-up">Our Vision</h2>
-        <p className="text-lg mb-4" data-aos="fade-up">To be the benchmark for quality and innovation in land surveying, providing accurate and reliable data for our clients.</p>
-        <h2 className="text-4xl font-semibold text-blue-900 mb-4" data-aos="fade-up">Our Mission</h2>
-        <p className="text-lg" data-aos="fade-up">To deliver exceptional service and insights that empower our clients to make informed decisions about their land and properties.</p>
-      </div>
+      <div className="mt-8 max-w-3xl mx-auto bg-[#475569] bg-opacity-90 rounded-lg p-8 shadow-lg">
+        <h2 className="text-4xl font-extrabold text-sky-500 mb-4 text-center relative">Our Vision</h2>
+        <p className="text-lg mb-4 text-center text-white">To be the benchmark for quality and innovation in land surveying, providing accurate and reliable data for our clients.</p>
+        <h2 className="text-4xl font-extrabold text-sky-500 mb-4 text-center relative">Our Mission</h2>
+        <p className="text-lg text-center text-white">To deliver exceptional service and insights that empower our clients to make informed decisions about their land and properties.</p>
+      </div> 
 
       {/* Services Section */}
-      <div className="container mx-auto px-4 py-16" data-aos="fade-up">
-        <h2 className="text-4xl font-semibold text-black mb-8" data-aos="fade-up">What We Do</h2>
+      <div className="container mx-auto px-4 py-16 text-center relative" >
+        <h2 className="text-4xl font-extrabold text-sky-950 mb-8 inline-block animate-bounce">What We Do</h2> 
+        <div className="w-20 h-1 bg-gradient-to-r from-cyan-300 to-indigo-600 mx-auto mb-8"></div> 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white bg-opacity-90 rounded-lg p-6 shadow-lg" data-aos="fade-up">
-              <h3 className="text-2xl font-semibold mb-3 text-blue-900">{service.name}</h3>
-              <p>{service.description}</p>
+            <div key={index} className="bg-[#475569] bg-opacity-90 rounded-lg p-6 shadow-lg">
+              <h3 className="text-2xl font-extrabold mb-3 text-sky-500 ">{service.name}</h3>
+              <p className='text-white'>{service.description}</p>
             </div>
           ))}
         </div>
       </div>
 
+
+    
+
       {/* Projects Section */}
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-semibold text-black mb-8">Our Projects</h2>
+      <div className="container mx-auto px-4 py-16 text-center relative" >
+        <h2 className="text-4xl font-semibold text-sky-950 mb-8 inline-block animate-bounce">Our Projects</h2> 
+        <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-indigo-600 mx-auto mb-8"></div> {/* Awesome underline effect */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
