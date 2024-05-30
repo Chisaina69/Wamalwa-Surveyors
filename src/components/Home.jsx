@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-// Importing background images
+
 import backgroundImg from '../assets/background.jpg';
 import backgroundImage2 from '../assets/J16A0496.jpg';
 import backgroundImage3 from '../assets/J16A0533.jpg';
@@ -11,11 +11,6 @@ import backgroundImage5 from '../assets/white-background.jpg';
 
 
 
-const preloadImages = (images) => {
-  images.forEach((image) => {
-    new Image().src = image;
-  });
-};
 
 const Home = () => {
   const [backgroundImages, setBackgroundImages] = useState([
