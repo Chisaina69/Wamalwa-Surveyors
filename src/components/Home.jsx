@@ -2,18 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-
 import backgroundImg from '../assets/background.jpg';
 import backgroundImage2 from '../assets/J16A0496.jpg';
 import backgroundImage3 from '../assets/J16A0533.jpg';
 import backgroundImage4 from '../assets/J16A1249.jpg';
 import backgroundImage5 from '../assets/white-background.jpg';
 
-
-
-
 const Home = () => {
-  const [backgroundImages, setBackgroundImages] = useState([
+  const [backgroundImages] = useState([
     { img: backgroundImg, title: 'Precision in Every Measurement', description: 'Your Trusted Partner in Land Surveying' },
     { img: backgroundImage2, title: 'Your Accurate Choice' },
     { img: backgroundImage3, title: 'DEFINING BOUNDARIES IN KENYA SINCE 2013' },
@@ -27,12 +23,20 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
     }, 5000); 
 
+    const preloadImages = (imageArray) => {
+      imageArray.forEach(image => {
+        const img = new Image();
+        img.src = image;
+      });
+    };
+
     preloadImages(backgroundImages.map(image => image.img)); 
 
     return () => clearInterval(interval);
-  }, [backgroundImages]);
+  }, []); // Removed backgroundImages from the dependency array
 
   const currentImage = backgroundImages[currentImageIndex];
+
   const services = [
     { 
       name: 'Feasibility studies', 
@@ -96,7 +100,7 @@ const Home = () => {
   );
 
   return (
-    <div className='bg-[#1e293b] '  style={{ backgroundImage: `url(${backgroundImage5})`, backgroundPosition: 'center', minHeight: '100vh' }}>
+    <div className='bg-[#1e293b]' style={{ backgroundImage: `url(${backgroundImage5})`, backgroundPosition: 'center', minHeight: '100vh' }}>
       <div className="relative" style={{ backgroundImage: `url(${currentImage.img})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
           <motion.h1 className="text-white text-6xl font-bold mb-4" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }}>{currentImage.title}</motion.h1>
@@ -113,24 +117,21 @@ const Home = () => {
       </div> 
 
       {/* Services Section */}
-      <div className="container mx-auto px-4 py-16 text-center relative" >
+      <div className="container mx-auto px-4 py-16 text-center relative">
         <h2 className="text-4xl font-extrabold text-sky-950 mb-8 inline-block animate-bounce">What We Do</h2> 
         <div className="w-20 h-1 bg-gradient-to-r from-cyan-300 to-indigo-600 mx-auto mb-8"></div> 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-[#475569] bg-opacity-90 rounded-lg p-6 shadow-lg">
-              <h3 className="text-2xl font-extrabold mb-3 text-sky-500 ">{service.name}</h3>
+              <h3 className="text-2xl font-extrabold mb-3 text-sky-500">{service.name}</h3>
               <p className='text-white'>{service.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-
-    
-
       {/* Projects Section */}
-      <div className="container mx-auto px-4 py-16 text-center relative" >
+      <div className="container mx-auto px-4 py-16 text-center relative">
         <h2 className="text-4xl font-semibold text-sky-950 mb-8 inline-block animate-bounce">Our Projects</h2> 
         <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-indigo-600 mx-auto mb-8"></div> {/* Awesome underline effect */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -144,8 +145,5 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
 
 
